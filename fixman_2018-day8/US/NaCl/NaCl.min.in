@@ -1,0 +1,9 @@
+trpcage 
+ &cntrl
+  imin   = 1,
+  maxcyc = 5000,
+  ncyc   = 1000,
+  ntb    = 1,
+  ntpr   = 1,
+  cut    = 8.0
+/

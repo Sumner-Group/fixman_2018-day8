@@ -1,0 +1,17 @@
+#source atom parameters
+source leaprc.water.tip3p
+
+#read pdb of system
+system=loadpdb "NaCl.pdb"
+
+#define a box size
+solvateOct system TIP3PBOX 20.0
+
+#useful command for sanity checks
+check system
+
+#combine everything into the files needed for the simulation
+saveamberparm system NaCl.prmtop NaCl.inpcrd
+
+#exit does not work!
+quit

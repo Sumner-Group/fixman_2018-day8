@@ -1,0 +1,17 @@
+#source atom parameters
+source leaprc.protein.ff14SBonlysc
+
+#read pdb of system
+system=loadpdb "3q5o_justprot-1chain.pdb"
+
+#define a box size
+set default PBradii mbondi3 
+
+#useful command for sanity checks
+check system
+
+#combine everything into the files needed for the simulation
+saveamberparm system M10.prmtop M10.inpcrd
+
+#exit does not work!
+quit

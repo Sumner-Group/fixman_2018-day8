@@ -1,0 +1,27 @@
+Heating
+ &cntrl
+  imin=0, ! Not a minimization run
+  ntx=1, ! Only coordinates from restart file
+  ntxo=2, ! The final coords, velocities, box size in NetCDF
+  ioutfm=1, ! Print mdcrd to NetCDF format
+  irest=0, ! Not a velocity restart 
+  ntwr=100000, ! Very high value for how often restart file is written
+  nstlim=50000, ! Number of MD steps, for a 2 fs ts this is 100 ps
+  dt=0.002, ! Time step in picoseconds, so this is 2 fs
+  ntf=2, ! Do not calc the force for SHAKE constrained bonds
+  ntc=2, ! Use SHAKE for all hydrogen bonds
+  ntpr=500, ! How often to print
+  ntwx=1000, ! How often write coordinates, every 2 ps
+  cut=999.0, ! nonbonded cutoff
+  ntb=0, ! Periodic boundaries for constant volume
+  igb=8, ! No pressure control for this phase
+    ntt=3, ! Use the Langevin thermostat
+  gamma_ln=1.0, ! Frequency of collisions for thermostat
+  nmropt=1, ! NMR restraints and weight changes
+  ig=-1, ! Randomize seed for Langevin thermostat
+  ntr=1, ! turn on restraints
+  restraint_wt=10.0, ! force constant for restraints
+  restraintmask=':1-100,@CA,C,O,N', ! restrained atoms
+ /
+&wt type='TEMP0', istep1=0, istep2=50000, value1=0.0, value2=100.0 /
+&wt type='END' /

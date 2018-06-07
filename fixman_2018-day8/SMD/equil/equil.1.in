@@ -1,0 +1,25 @@
+NPT equilibration
+ &cntrl
+  imin=0, ! Not a minimization run
+  ntx=5, ! Read coordinates and velocities from restart file
+  irest=1, ! Restart from previous, expecting velocities
+  ntxo=2, ! The final coords, velocities, box size in NetCDF
+  ioutfm=1, ! Print mdcrd to NetCDF format
+  ntwr=100000, ! Very high value for how often restart file is written
+  nstlim=50000, ! 100 ps of NPT equilibration
+  dt=0.002, ! Time step in picoseconds, so this is 2 fs
+  ntf=2, ! Do not calc the force for SHAKE constrained bonds
+  ntc=2, ! Use SHAKE for all hydrogen bonds
+  temp0=300.0, ! Thermostat temperature, Run at this temperature
+  ntpr=1000, ! How often to print
+  ntwx=1000, ! Write coordinates every 2 ps
+  cut=999.0, ! Nonbonded cutoff
+  ntb=0, ! Use PBC and constant pressure
+  igb=8, ! Isotropic pressure scaling
+  ntt=3, ! Use the Lengevin thermostat
+  gamma_ln=1.0, ! Frequency of collisions for thermostat
+  ig=-1, ! Randomize seed for Langevin thermostat
+  ntr=1, ! turn on restraints
+  restraint_wt=10.0, ! force constant for restraints
+  restraintmask=':1-100,@CA,C,O,N', ! restrained atoms
+ /
